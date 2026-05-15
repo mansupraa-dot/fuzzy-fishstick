@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Heart } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
 
 function formatPrice(n) {
@@ -13,53 +14,88 @@ export default function ProductCard({ product }) {
     dispatch({
       type: 'ADD',
       product,
-      color: product.colors[0] || null,
-      fabric: product.fabrics[0] || null,
+      color: product.colors?.[0] ?? null,
+      fabric: product.fabrics?.[0] ?? null,
     })
   }
 
   return (
     <Link to={`/product/${product.id}`} className="group block">
-      {/* Image */}
-      <div className="relative aspect-[4/3] bg-stone-100 overflow-hidden mb-4">
-        <div className="w-full h-full bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-          <span className="text-stone-400 text-xs text-center px-6 leading-relaxed">
-            {product.images[0]}
-          </span>
-        </div>
+      <div className="glass-card overflow-hidden transition-transform duration-200 hover:-translate-y-1">
 
-        {product.oldPrice && (
-          <span className="absolute top-3 left-3 bg-graphite text-white text-xs px-2 py-1">
-            Скидка
-          </span>
-        )}
+        {/* Image area */}
+        <div className="relative aspect-[4/3] bg-white/40 overflow-hidden">
+          <div className="w-full h-full flex items-center justify-center text-ink-5 text-xs
+            tracking-widest transition-transform duration-500 group-hover:scale-105">
+            {product.images?.[0] ?? 'фото товара'}
+          </div>
 
-        {/* Quick add */}
-        <button
-          onClick={handleAddToCart}
-          className="absolute bottom-0 left-0 right-0 bg-graphite text-white text-xs py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-        >
-          В корзину
-        </button>
-      </div>
-
-      {/* Info */}
-      <div>
-        <p className="text-xs text-stone-400 mb-1 uppercase tracking-widest">
-          {product.colors.slice(0, 3).join(' · ')}
-          {product.colors.length > 3 && ` +${product.colors.length - 3}`}
-        </p>
-        <h3 className="text-sm font-medium text-graphite mb-2 group-hover:text-stone-500 transition-colors">
-          {product.name}
-        </h3>
-        <div className="flex items-baseline gap-2">
-          <span className="text-base font-medium text-graphite">{formatPrice(product.price)}</span>
           {product.oldPrice && (
-            <span className="text-sm text-stone-400 line-through">
-              {formatPrice(product.oldPrice)}
+            <span className="absolute top-3 left-3 bg-ink text-white text-[10px]
+              px-2.5 py-1 rounded-full tracking-wide">
+              Скидка
             </span>
           )}
+
+          {/* Wishlist button */}
+          <button
+            onClick={(e) => e.preventDefault()}
+            className="absolute top-3 right-3 w-7 h-7 glass-circle flex items-center justify-center
+              opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+            aria-label="В избранное"
+          >
+            <Heart size={13} className="text-ink-3" strokeWidth={1.5} />
+          </button>
+
+          {/* Quick add */}
+          <button
+            onClick={handleAddToCart}
+            className="absolute bottom-0 left-0 right-0 bg-ink/90 text-white text-xs py-3
+              translate-y-full group-hover:translate-y-0 transition-transform duration-300
+              tracking-wide"
+          >
+            В корзину
+          </button>
         </div>
+
+        {/* Info */}
+        <div className="p-4">
+          {product.brand && (
+            <p className="text-[9px] uppercase tracking-[0.2em] text-ink-4 mb-1">
+              {product.brand}
+            </p>
+          )}
+          <h3 className="text-[13px] font-normal text-ink mb-2 leading-snug">
+            {product.name}
+          </h3>
+
+          {/* Color swatches preview */}
+          {product.colors?.length > 0 && (
+            <div className="flex gap-1 mb-3">
+              {product.colors.slice(0, 4).map((c) => (
+                <span
+                  key={c}
+                  className="text-[9px] text-ink-4 bg-black/5 px-1.5 py-0.5 rounded-full"
+                >
+                  {c}
+                </span>
+              ))}
+              {product.colors.length > 4 && (
+                <span className="text-[9px] text-ink-4">+{product.colors.length - 4}</span>
+              )}
+            </div>
+          )}
+
+          <div className="flex items-baseline gap-2">
+            <span className="text-sm font-normal text-ink">{formatPrice(product.price)}</span>
+            {product.oldPrice && (
+              <span className="text-xs text-ink-4 line-through">
+                {formatPrice(product.oldPrice)}
+              </span>
+            )}
+          </div>
+        </div>
+
       </div>
     </Link>
   )
