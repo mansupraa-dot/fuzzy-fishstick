@@ -1,34 +1,41 @@
 import { Link } from 'react-router-dom'
 
-const LINKS = [
-  ['Услуги', '/services'],
-  ['Портфолио', '/portfolio'],
+const CATALOG_LINKS = [
+  ['Мебель', '/catalog/furniture'],
+  ['Освещение', '/catalog/lighting'],
+  ['Сантехника', '/catalog/plumbing'],
+  ['Коллекции', '/collections'],
+]
+
+const SERVICE_LINKS = [
+  ['Дизайн-проект', '/services'],
   ['Как работаем', '/process'],
-  ['Блог', '/blog'],
-  ['Контакт', '/contact'],
+  ['Шоурум', '/showroom'],
+  ['Рассказать о проекте', '/brief'],
+]
+
+const BRAND_LINKS = [
+  ['О нас', '/philosophy'],
+  ['Портфолио', '/portfolio'],
+]
+
+const HELP_LINKS = [
+  ['Доставка', '/delivery'],
+  ['Возврат', '/return'],
+  ['Контакты', '/contact'],
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-graphite text-white">
+    <footer className="bg-white/50 border-t border-white/80 mt-24">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          <div>
-            <div className="text-xl font-semibold tracking-tight mb-4">Pufflux</div>
-            <p className="text-sm text-white/50 leading-relaxed max-w-xs">
-              Архитектурный подбор мебели, освещения и сантехники для квартир в Санкт-Петербурге.
-            </p>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-16">
 
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/30 mb-5">Разделы</div>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-ink-4 mb-5">Каталог</div>
             <nav className="flex flex-col gap-3">
-              {LINKS.map(([label, to]) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className="text-sm text-white/55 hover:text-white transition-colors w-fit"
-                >
+              {CATALOG_LINKS.map(([label, to]) => (
+                <Link key={to} to={to} className="text-sm text-ink-3 hover:text-ink transition-colors w-fit">
                   {label}
                 </Link>
               ))}
@@ -36,32 +43,79 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/30 mb-5">Контакты</div>
-            <div className="flex flex-col gap-3 text-sm text-white/55">
-              <span>Санкт-Петербург</span>
-              <a href="tel:+78121234567" className="hover:text-white transition-colors w-fit">
-                +7 (812) 123-45-67
-              </a>
-              <a href="mailto:hello@pufflux.ru" className="hover:text-white transition-colors w-fit">
-                hello@pufflux.ru
-              </a>
-              <div className="flex gap-5 mt-2">
-                <a href="https://t.me/pufflux" className="hover:text-white transition-colors">
-                  Telegram
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  WhatsApp
-                </a>
-              </div>
-            </div>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-ink-4 mb-5">Услуги</div>
+            <nav className="flex flex-col gap-3">
+              {SERVICE_LINKS.map(([label, to]) => (
+                <Link key={to} to={to} className="text-sm text-ink-3 hover:text-ink transition-colors w-fit">
+                  {label}
+                </Link>
+              ))}
+            </nav>
           </div>
+
+          <div>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-ink-4 mb-5">О бренде</div>
+            <nav className="flex flex-col gap-3">
+              {BRAND_LINKS.map(([label, to]) => (
+                <Link key={to} to={to} className="text-sm text-ink-3 hover:text-ink transition-colors w-fit">
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-ink-4 mb-5">Помощь</div>
+            <nav className="flex flex-col gap-3">
+              {HELP_LINKS.map(([label, to]) => (
+                <Link key={to} to={to} className="text-sm text-ink-3 hover:text-ink transition-colors w-fit">
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
         </div>
 
-        <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3">
-          <span className="text-xs text-white/25">© 2024 Pufflux. Все права защищены.</span>
-          <span className="text-xs text-white/25">
-            Подбор мебели, освещения и сантехники в Санкт-Петербурге
-          </span>
+        {/* Email subscribe */}
+        <div className="glass-card p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center
+          justify-between gap-6 mb-12">
+          <div>
+            <div className="text-sm font-medium text-ink mb-1">Новинки и подборки</div>
+            <div className="text-[13px] text-ink-3">Раз в месяц — новые товары и кураторские коллекции.</div>
+          </div>
+          <form
+            className="flex gap-2 w-full md:w-auto"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="your@email.ru"
+              className="flex-1 md:w-52 px-4 py-2.5 text-sm bg-white/60 border border-white/90
+                rounded-full outline-none focus:bg-white/80 transition-colors text-ink
+                placeholder:text-ink-4"
+            />
+            <button
+              type="submit"
+              className="px-5 py-2.5 text-sm bg-ink text-white rounded-full
+                hover:bg-ink/85 transition-colors whitespace-nowrap"
+            >
+              Подписаться
+            </button>
+          </form>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+          <span className="text-[11px] text-ink-4">© 2026 Brand. Все права защищены.</span>
+          <div className="flex items-center gap-5">
+            <a href="https://t.me/" className="text-[11px] text-ink-4 hover:text-ink transition-colors">
+              Telegram
+            </a>
+            <a href="#" className="text-[11px] text-ink-4 hover:text-ink transition-colors">
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </footer>
