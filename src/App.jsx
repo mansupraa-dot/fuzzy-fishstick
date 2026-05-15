@@ -8,24 +8,45 @@ import CartPage from './pages/CartPage'
 import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
 import ProcessPage from './pages/ProcessPage'
-import BlogPage from './pages/BlogPage'
 import ContactPage from './pages/ContactPage'
+
+// Placeholder pages — will be fleshed out in later plans
+function PlaceholderPage({ title }) {
+  return (
+    <div className="min-h-screen pt-28 pb-20 max-w-6xl mx-auto px-6">
+      <h1 className="text-2xl font-light text-ink">{title}</h1>
+      <p className="text-ink-3 mt-2 text-sm">Страница в разработке.</p>
+    </div>
+  )
+}
 
 export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <main>
+      <main className="min-h-screen">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/catalog/:category" element={<CatalogPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/portfolio/:slug" element={<PortfolioPage />} />
           <Route path="/process" element={<ProcessPage />} />
-          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/philosophy" element={<PlaceholderPage title="О нас" />} />
+          <Route path="/collections" element={<PlaceholderPage title="Коллекции" />} />
+          <Route path="/collections/:slug" element={<PlaceholderPage title="Коллекция" />} />
+          <Route path="/showroom" element={<PlaceholderPage title="Шоурум" />} />
+          <Route path="/brief" element={<PlaceholderPage title="Рассказать о проекте" />} />
+          <Route path="/wishlist" element={<PlaceholderPage title="Избранное" />} />
+          <Route path="/account" element={<PlaceholderPage title="Личный кабинет" />} />
+          <Route path="/search" element={<PlaceholderPage title="Поиск" />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/delivery" element={<PlaceholderPage title="Доставка" />} />
+          <Route path="/return" element={<PlaceholderPage title="Возврат" />} />
+          <Route path="*" element={<PlaceholderPage title="Страница не найдена" />} />
         </Routes>
       </main>
       <Footer />
