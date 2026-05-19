@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from '../../context/CartContext'
 import CatalogPage from '../CatalogPage'
@@ -41,5 +41,12 @@ describe('CatalogPage', () => {
     const select = screen.getByRole('combobox', { name: 'Сортировка' })
     expect(select).toBeInTheDocument()
     expect(select.value).toBe('popular')
+  })
+
+  test('sort select renders alongside subcategory filters', () => {
+    renderCatalog()
+    // Both subcategory pills and sort must coexist
+    expect(screen.getByRole('button', { name: 'Диваны' })).toBeInTheDocument()
+    expect(screen.getByRole('combobox', { name: 'Сортировка' })).toBeInTheDocument()
   })
 })

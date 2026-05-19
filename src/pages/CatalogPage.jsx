@@ -80,9 +80,9 @@ export default function CatalogPage() {
 
         <div className="max-w-6xl mx-auto px-6 pb-16">
           {/* Filters + sort row */}
-          {subs.length > 0 && (
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
-              {/* Subcategory filters */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
+            {/* Subcategory filters — only when subs exist */}
+            {subs.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => setSub('all')}
@@ -108,22 +108,22 @@ export default function CatalogPage() {
                   </button>
                 ))}
               </div>
+            )}
 
-              {/* Sort */}
-              <select
-                value={activeSort}
-                onChange={(e) => setSort(e.target.value)}
-                aria-label="Сортировка"
-                className="text-xs text-ink-3 bg-white/60 border border-white/80 rounded-full px-4 py-2 outline-none cursor-pointer"
-              >
-                {SORT_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {o.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
+            {/* Sort — always visible when products exist */}
+            <select
+              value={activeSort}
+              onChange={(e) => setSort(e.target.value)}
+              aria-label="Сортировка"
+              className="text-xs text-ink-3 bg-white/60 border border-white/80 rounded-full px-4 py-2 outline-none cursor-pointer"
+            >
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
           {/* Products grid */}
           {products.length === 0 ? (
