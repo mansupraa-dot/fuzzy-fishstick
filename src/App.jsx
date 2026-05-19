@@ -8,6 +8,7 @@ import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import WishlistPage from './pages/WishlistPage'
 import CheckoutPage from './pages/CheckoutPage'
+import AccountPage from './pages/AccountPage'
 import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
 import ProcessPage from './pages/ProcessPage'
@@ -45,7 +46,7 @@ export default function App() {
           <Route path="/showroom" element={<PlaceholderPage title="Шоурум" />} />
           <Route path="/brief" element={<PlaceholderPage title="Рассказать о проекте" />} />
           <Route path="/wishlist" element={<WishlistPage />} />
-          <Route path="/account" element={<PlaceholderPage title="Личный кабинет" />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="/search" element={<PlaceholderPage title="Поиск" />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/delivery" element={<PlaceholderPage title="Доставка" />} />
