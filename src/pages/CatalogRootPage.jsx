@@ -1,23 +1,18 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { CATEGORY_LABELS } from '../data/products'
 
-const CATEGORIES = [
-  {
-    id: 'furniture',
-    label: 'Мебель',
-    description: 'Диваны, кровати, обеденные столы',
-  },
-  {
-    id: 'lighting',
-    label: 'Освещение',
-    description: 'Подвесные, трековые, встраиваемые',
-  },
-  {
-    id: 'plumbing',
-    label: 'Сантехника',
-    description: 'Смесители, раковины, ванны',
-  },
-]
+const CATEGORY_DESCRIPTIONS = {
+  furniture: 'Диваны, кровати, обеденные столы',
+  lighting: 'Подвесные, трековые, встраиваемые',
+  plumbing: 'Смесители, раковины, ванны',
+}
+
+const CATEGORIES = Object.entries(CATEGORY_LABELS).map(([id, label]) => ({
+  id,
+  label,
+  description: CATEGORY_DESCRIPTIONS[id],
+}))
 
 export default function CatalogRootPage() {
   return (
