@@ -1,16 +1,19 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from '../../context/CartContext'
+import { WishlistProvider } from '../../context/WishlistContext'
 import CatalogPage from '../CatalogPage'
 
 function renderCatalog(path = '/catalog/furniture') {
   return render(
     <CartProvider>
-      <MemoryRouter initialEntries={[path]}>
-        <Routes>
-          <Route path="/catalog/:category" element={<CatalogPage />} />
-        </Routes>
-      </MemoryRouter>
+      <WishlistProvider>
+        <MemoryRouter initialEntries={[path]}>
+          <Routes>
+            <Route path="/catalog/:category" element={<CatalogPage />} />
+          </Routes>
+        </MemoryRouter>
+      </WishlistProvider>
     </CartProvider>
   )
 }

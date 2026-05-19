@@ -1,13 +1,16 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { CartProvider } from '../../../context/CartContext'
+import { WishlistProvider } from '../../../context/WishlistContext'
 import { describe, it, expect } from 'vitest'
 import Header from '../Header'
 
 const wrap = (ui) =>
   render(
     <MemoryRouter>
-      <CartProvider>{ui}</CartProvider>
+      <CartProvider>
+        <WishlistProvider>{ui}</WishlistProvider>
+      </CartProvider>
     </MemoryRouter>
   )
 

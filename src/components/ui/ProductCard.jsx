@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Heart } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
+import { useWishlist } from '../../context/WishlistContext'
 
 function formatPrice(n) {
   return n.toLocaleString('ru-RU') + ' ₽'
@@ -8,6 +9,8 @@ function formatPrice(n) {
 
 export default function ProductCard({ product }) {
   const { dispatch } = useCart()
+  const { toggle, isWishlisted } = useWishlist()
+  const wishlisted = isWishlisted(product.id)
 
   function handleAddToCart(e) {
     e.preventDefault()
@@ -39,12 +42,17 @@ export default function ProductCard({ product }) {
 
           {/* Wishlist button */}
           <button
-            onClick={(e) => e.preventDefault()}
+            onClick={(e) => { e.preventDefault(); toggle(product.id) }}
             className="absolute top-3 right-3 w-7 h-7 glass-circle flex items-center justify-center
               opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            aria-label="В избранное"
+            aria-label={wishlisted ? 'Убрать из избранного' : 'В избранное'}
           >
-            <Heart size={13} className="text-ink-3" strokeWidth={1.5} />
+            <Heart
+              size={13}
+              className={wishlisted ? 'text-ink' : 'text-ink-3'}
+              strokeWidth={1.5}
+              fill={wishlisted ? 'currentColor' : 'none'}
+            />
           </button>
 
           {/* Quick add */}

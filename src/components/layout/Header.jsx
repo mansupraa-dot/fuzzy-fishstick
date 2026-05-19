@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { ShoppingBag, Heart, Search, Menu, X } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
+import { useWishlist } from '../../context/WishlistContext'
 import NavIcon from '../ui/NavIcon'
 
 const NAV = [
@@ -16,6 +17,7 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { itemCount } = useCart()
+  const { count: wishlistCount } = useWishlist()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -61,7 +63,7 @@ export default function Header() {
           <NavIcon to="/search" label="Поиск">
             <Search size={15} className="text-ink-2" strokeWidth={1.5} />
           </NavIcon>
-          <NavIcon to="/wishlist" label="Избранное">
+          <NavIcon to="/wishlist" label="Избранное" count={wishlistCount}>
             <Heart size={15} className="text-ink-2" strokeWidth={1.5} />
           </NavIcon>
           <NavIcon to="/cart" label="Корзина" count={itemCount}>
