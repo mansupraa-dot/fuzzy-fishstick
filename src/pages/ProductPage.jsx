@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { Heart } from 'lucide-react'
@@ -22,6 +22,7 @@ const COLOR_MAP = {
   'Хром': '#C0C0C0',
   'Матовый чёрный': '#2A2A2A',
   'Матовый белый': '#F0F0F0',
+  'Чёрный матовый': '#1A1A1A',
   'Белый глянец': '#FFFFFF',
   'Белый матовый': '#F5F5F5',
   'Дуб натуральный': '#C49A6C',
@@ -43,6 +44,7 @@ export default function ProductPage() {
   const [selectedColor, setSelectedColor] = useState(product?.colors[0] ?? null)
   const [selectedFabric, setSelectedFabric] = useState(product?.fabrics[0] ?? null)
   const [added, setAdded] = useState(false)
+  const timerRef = useRef(null)
 
   if (!product) {
     return (
@@ -63,8 +65,11 @@ export default function ProductPage() {
   function handleAddToCart() {
     dispatch({ type: 'ADD', product, color: selectedColor, fabric: selectedFabric })
     setAdded(true)
-    setTimeout(() => setAdded(false), 2000)
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => setAdded(false), 2000)
   }
+
+  useEffect(() => () => clearTimeout(timerRef.current), [])
 
   return (
     <>
