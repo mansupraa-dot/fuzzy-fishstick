@@ -204,8 +204,8 @@ export default function ProductPage() {
               <div className="flex gap-3 mb-8">
                 <Button
                   onClick={handleAddToCart}
-                  variant={added ? 'ghost' : 'primary'}
-                  className="flex-1"
+                  variant="primary"
+                  className={`flex-1 transition-colors ${added ? 'bg-emerald-700 border-emerald-700' : ''}`}
                 >
                   {added ? '✓ Добавлено' : 'В корзину'}
                 </Button>

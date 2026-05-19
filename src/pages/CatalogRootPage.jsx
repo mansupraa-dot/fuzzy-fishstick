@@ -11,7 +11,7 @@ const CATEGORY_DESCRIPTIONS = {
 const CATEGORIES = Object.entries(CATEGORY_LABELS).map(([id, label]) => ({
   id,
   label,
-  description: CATEGORY_DESCRIPTIONS[id],
+  description: CATEGORY_DESCRIPTIONS[id] ?? '',
 }))
 
 export default function CatalogRootPage() {
