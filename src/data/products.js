@@ -498,3 +498,9 @@ export function getProductsByCategory(category, subcategory = null) {
     (p) => p.category === category && (!subcategory || p.subcategory === subcategory)
   )
 }
+
+export function sortProducts(products, sort) {
+  if (sort === 'price_asc') return [...products].sort((a, b) => a.price - b.price)
+  if (sort === 'price_desc') return [...products].sort((a, b) => b.price - a.price)
+  return [...products].sort((a, b) => (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0))
+}

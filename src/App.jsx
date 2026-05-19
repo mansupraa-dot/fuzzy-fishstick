@@ -3,6 +3,7 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import HomePage from './pages/HomePage'
 import CatalogPage from './pages/CatalogPage'
+import CatalogRootPage from './pages/CatalogRootPage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import ServicesPage from './pages/ServicesPage'
@@ -27,7 +28,7 @@ export default function App() {
       <main className="min-h-screen">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog" element={<CatalogRootPage />} />
           <Route path="/catalog/:category" element={<CatalogPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
