@@ -7,6 +7,7 @@ import CatalogRootPage from './pages/CatalogRootPage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import WishlistPage from './pages/WishlistPage'
+import CheckoutPage from './pages/CheckoutPage'
 import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
 import ProcessPage from './pages/ProcessPage'
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/catalog/:category" element={<CatalogPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/:slug" element={<PortfolioPage />} />
