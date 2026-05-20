@@ -64,74 +64,60 @@ export default function ServicesPage() {
         />
       </Helmet>
 
-      <div className="pt-16">
-        {/* Page header */}
-        <div className="bg-graphite text-white py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <p className="text-xs uppercase tracking-widest text-accent mb-4">Что мы делаем</p>
-              <h1 className="text-4xl md:text-6xl font-light leading-tight max-w-2xl">
-                Подбор, а не продажа
-              </h1>
-            </Reveal>
-          </div>
-        </div>
+      <div className="pt-20 min-h-screen">
+        <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
+          <Reveal>
+            <h1 className="text-2xl font-light text-ink mb-2">Подбор, а не продажа</h1>
+            <p className="text-sm text-ink-3 mb-12">
+              Архитектурный подход к выбору мебели, света и сантехники
+            </p>
+          </Reveal>
 
-        {/* Services */}
-        <div className="bg-white py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col gap-16 md:gap-20">
-              {SERVICES.map(({ title, price, description, includes }, i) => (
-                <Reveal key={title}>
-                  <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+          <div className="flex flex-col gap-6">
+            {SERVICES.map(({ title, price, description, includes }) => (
+              <Reveal key={title}>
+                <div className="glass-card p-8">
+                  <div className="grid md:grid-cols-2 gap-8 items-start">
                     <div>
-                      <div className="flex items-baseline gap-4 mb-5">
-                        <h2 className="text-2xl font-medium text-graphite">{title}</h2>
-                        <span className="text-sm text-stone-400">{price}</span>
+                      <div className="flex items-baseline gap-3 mb-4">
+                        <h2 className="text-xl font-light text-ink">{title}</h2>
+                        <span className="text-sm text-ink-4">{price}</span>
                       </div>
-                      <p className="text-stone-500 leading-relaxed">{description}</p>
+                      <p className="text-sm text-ink-3 leading-relaxed">{description}</p>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-stone-300 mb-4">
+                      <p className="text-[10px] uppercase tracking-widest text-ink-4 mb-3">
                         Что входит
                       </p>
-                      <ul className="flex flex-col gap-3">
+                      <ul className="flex flex-col gap-2">
                         {includes.map((item) => (
-                          <li key={item} className="flex items-start gap-3 text-sm text-stone-500">
-                            <span className="text-accent mt-0.5 shrink-0">—</span>
+                          <li key={item} className="flex items-start gap-2 text-sm text-ink-3">
+                            <span className="text-ink-4 shrink-0 mt-0.5">—</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                  {i < SERVICES.length - 1 && (
-                    <div className="mt-16 md:mt-20 border-t border-stone-100" />
-                  )}
-                </Reveal>
-              ))}
-            </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="bg-cream py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center md:text-left">
-            <Reveal>
-              <h2 className="text-2xl md:text-3xl font-light text-graphite mb-6">
-                Не знаете, с чего начать?
-              </h2>
-              <p className="text-stone-500 mb-8 max-w-md">
+          <Reveal>
+            <div className="glass-card p-8 mt-12 text-center">
+              <h2 className="text-xl font-light text-ink mb-3">Не знаете, с чего начать?</h2>
+              <p className="text-sm text-ink-3 mb-6">
                 Расскажите о проекте — поможем разобраться, что нужно именно вам.
               </p>
               <Link
-                to="/contact"
-                className="inline-block bg-graphite text-white text-sm px-8 py-4 hover:bg-stone-700 transition-colors"
+                to="/brief"
+                className="inline-block bg-ink text-white text-sm px-8 py-3 rounded-full hover:bg-ink/85 transition-colors"
               >
                 Обсудить проект
               </Link>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </>
