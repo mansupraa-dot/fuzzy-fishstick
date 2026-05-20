@@ -13,6 +13,7 @@ import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
 import ProcessPage from './pages/ProcessPage'
 import ContactPage from './pages/ContactPage'
+import PhilosophyPage from './pages/PhilosophyPage'
 
 // Placeholder pages — will be fleshed out in later plans
 function PlaceholderPage({ title }) {
@@ -40,7 +41,7 @@ export default function App() {
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/:slug" element={<PortfolioPage />} />
           <Route path="/process" element={<ProcessPage />} />
-          <Route path="/philosophy" element={<PlaceholderPage title="О нас" />} />
+          <Route path="/philosophy" element={<PhilosophyPage />} />
           <Route path="/collections" element={<PlaceholderPage title="Коллекции" />} />
           <Route path="/collections/:slug" element={<PlaceholderPage title="Коллекция" />} />
           <Route path="/showroom" element={<PlaceholderPage title="Шоурум" />} />
