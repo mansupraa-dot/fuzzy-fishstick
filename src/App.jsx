@@ -11,6 +11,7 @@ import CheckoutPage from './pages/CheckoutPage'
 import AccountPage from './pages/AccountPage'
 import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
+import PortfolioItemPage from './pages/PortfolioItemPage'
 import ProcessPage from './pages/ProcessPage'
 import ContactPage from './pages/ContactPage'
 import PhilosophyPage from './pages/PhilosophyPage'
@@ -39,7 +40,7 @@ export default function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/portfolio/:slug" element={<PortfolioPage />} />
+          <Route path="/portfolio/:slug" element={<PortfolioItemPage />} />
           <Route path="/process" element={<ProcessPage />} />
           <Route path="/philosophy" element={<PhilosophyPage />} />
           <Route path="/collections" element={<PlaceholderPage title="Коллекции" />} />
