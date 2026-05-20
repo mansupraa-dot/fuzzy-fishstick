@@ -74,80 +74,67 @@ export default function ProcessPage() {
         />
       </Helmet>
 
-      <div className="pt-16">
-        <div className="bg-graphite text-white py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <p className="text-xs uppercase tracking-widest text-accent mb-4">Процесс</p>
-              <h1 className="text-4xl md:text-6xl font-light leading-tight max-w-xl">
-                Как это работает
-              </h1>
-            </Reveal>
-          </div>
-        </div>
+      <div className="pt-20 min-h-screen">
+        <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
+          <Reveal>
+            <h1 className="text-2xl font-light text-ink mb-12">Как это работает</h1>
+          </Reveal>
 
-        <div className="bg-white py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col gap-20 md:gap-24">
-              {STEPS.map(({ number, title, duration, description, details }) => (
-                <Reveal key={number}>
-                  <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-20">
-                    <div>
-                      <div className="text-6xl font-light text-graphite/8 mb-4 leading-none select-none">
-                        {number}
-                      </div>
-                      <h2 className="text-2xl font-medium text-graphite mb-1">{title}</h2>
-                      <p className="text-sm text-stone-400">{duration}</p>
-                    </div>
-                    <div>
-                      <p className="text-stone-500 leading-relaxed mb-8">{description}</p>
-                      <ul className="flex flex-col gap-3">
-                        {details.map((item) => (
-                          <li key={item} className="flex items-start gap-3 text-sm text-stone-500">
-                            <span className="text-accent mt-0.5 shrink-0">—</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-cream py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <p className="text-xs uppercase tracking-widest text-accent mb-3">Вопросы</p>
-              <h2 className="text-2xl md:text-3xl font-light text-graphite mb-12">FAQ</h2>
-            </Reveal>
-            <div className="flex flex-col gap-8 max-w-2xl">
-              {FAQ.map(({ q, a }) => (
-                <Reveal key={q}>
+          <div className="flex flex-col gap-16 mb-20">
+            {STEPS.map(({ number, title, duration, description, details }) => (
+              <Reveal key={number}>
+                <div className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
                   <div>
-                    <h3 className="text-base font-medium text-graphite mb-2">{q}</h3>
-                    <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
+                    <div className="text-6xl font-light text-ink/8 mb-3 leading-none select-none">
+                      {number}
+                    </div>
+                    <h2 className="text-xl font-light text-ink mb-1">{title}</h2>
+                    <p className="text-sm text-ink-4">{duration}</p>
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                  <div>
+                    <p className="text-sm text-ink-3 leading-relaxed mb-6">{description}</p>
+                    <ul className="flex flex-col gap-2">
+                      {details.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-ink-3">
+                          <span className="text-ink-4 shrink-0 mt-0.5">—</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </div>
 
-        <div className="bg-white py-20 border-t border-stone-100">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <h2 className="text-2xl font-light text-graphite mb-6">Готовы начать?</h2>
+          <Reveal>
+            <div className="border-t border-black/8 pt-12 mb-16">
+              <p className="text-[10px] uppercase tracking-widest text-ink-4 mb-8">Вопросы</p>
+              <h2 className="text-xl font-light text-ink mb-10">FAQ</h2>
+              <div className="flex flex-col gap-8 max-w-2xl">
+                {FAQ.map(({ q, a }) => (
+                  <Reveal key={q}>
+                    <div>
+                      <h3 className="text-sm font-normal text-ink mb-2">{q}</h3>
+                      <p className="text-sm text-ink-3 leading-relaxed">{a}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="glass-card p-8 text-center">
+              <h2 className="text-xl font-light text-ink mb-3">Готовы начать?</h2>
               <Link
-                to="/contact"
-                className="inline-block bg-graphite text-white text-sm px-8 py-4 hover:bg-stone-700 transition-colors"
+                to="/brief"
+                className="inline-block bg-ink text-white text-sm px-8 py-3 rounded-full hover:bg-ink/85 transition-colors"
               >
                 Обсудить проект
               </Link>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </>
