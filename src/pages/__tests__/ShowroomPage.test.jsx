@@ -1,16 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import { HelmetProvider } from 'react-helmet-async'
 import ShowroomPage from '../ShowroomPage'
 
 function renderShowroom() {
-  return render(
-    <HelmetProvider>
-      <MemoryRouter>
-        <ShowroomPage />
-      </MemoryRouter>
-    </HelmetProvider>
-  )
+  return render(<MemoryRouter><ShowroomPage /></MemoryRouter>)
 }
 
 describe('ShowroomPage', () => {
