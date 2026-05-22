@@ -47,7 +47,9 @@ export default function CatalogPage() {
   const minPrice = minPriceParam ?? globalMin
   const maxPrice = maxPriceParam ?? globalMax
 
-  // Filtered product list — deps are all primitives so memo works correctly
+  // colorsStr (string) is the dep — colorsParam (array) is derived from it each render,
+  // so using the string avoids a new array reference invalidating the memo every render.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const products = useMemo(() => {
     const raw = getProductsByCategory(category, activeSub === 'all' ? null : activeSub)
     let list = sortProducts(raw, activeSort)
