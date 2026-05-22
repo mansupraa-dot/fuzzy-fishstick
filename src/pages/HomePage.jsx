@@ -4,7 +4,24 @@ import Hero from '../sections/Hero'
 import HowWeWork from '../sections/HowWeWork'
 import Portfolio from '../sections/Portfolio'
 import CTA from '../sections/CTA'
-import { COLLECTIONS } from '../data/collections'
+
+const CATEGORIES = [
+  {
+    label: 'Мебель',
+    description: 'Диваны, кресла, столы, стеллажи от европейских производителей.',
+    href: '/catalog/furniture',
+  },
+  {
+    label: 'Освещение',
+    description: 'Люстры, бра, трековые системы — свет как элемент интерьера.',
+    href: '/catalog/lighting',
+  },
+  {
+    label: 'Сантехника',
+    description: 'Раковины, смесители, душевые системы премиум-класса.',
+    href: '/catalog/plumbing',
+  },
+]
 
 export default function HomePage() {
   return (
@@ -22,18 +39,20 @@ export default function HomePage() {
 
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-light text-ink mb-10">Коллекции</h2>
+          <h2 className="text-2xl font-light text-ink mb-10">Каталог</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {COLLECTIONS.map((c) => (
+            {CATEGORIES.map((cat) => (
               <Link
-                key={c.slug}
-                to={`/collections/${c.slug}`}
+                key={cat.href}
+                to={cat.href}
                 className="glass-card overflow-hidden block group"
               >
                 <div className="aspect-[4/3] bg-white/40" />
                 <div className="p-5">
-                  <p className="text-base font-light text-ink mb-1">{c.title}</p>
-                  <p className="text-sm text-ink-3 mb-3 line-clamp-2">{c.description}</p>
+                  <p className="text-base font-light text-ink mb-1">
+                    {cat.label}
+                  </p>
+                  <p className="text-sm text-ink-3 mb-3">{cat.description}</p>
                   <span className="text-ink-4 group-hover:text-ink transition-colors text-sm">
                     →
                   </span>
