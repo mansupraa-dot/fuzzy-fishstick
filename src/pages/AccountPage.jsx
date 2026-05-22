@@ -4,7 +4,7 @@ export default function AccountPage() {
   return (
     <>
       <Helmet>
-        <title>Личный кабинет — Pufflux</title>
+        <title>Личный кабинет — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

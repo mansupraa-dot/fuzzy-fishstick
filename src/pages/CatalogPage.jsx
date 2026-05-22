@@ -53,10 +53,10 @@ export default function CatalogPage() {
   return (
     <>
       <Helmet>
-        <title>{label} — каталог Pufflux</title>
+        <title>{label} — каталог Archittell</title>
         <meta
           name="description"
-          content={`Каталог ${label.toLowerCase()} в Pufflux. Отобранные бренды.`}
+          content={`Каталог ${label.toLowerCase()} в Archittell. Отобранные бренды.`}
         />
       </Helmet>
 

@@ -19,7 +19,7 @@ export default function PortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>Портфолио — Pufflux</title>
+        <title>Портфолио — Archittell</title>
         <meta
           name="description"
           content="Проекты подбора мебели, освещения и сантехники для квартир в Санкт-Петербурге."

@@ -74,7 +74,7 @@ export default function ProductPage() {
   return (
     <>
       <Helmet>
-        <title>{product.name} — Pufflux</title>
+        <title>{product.name} — Archittell</title>
         <meta name="description" content={product.description} />
       </Helmet>
 

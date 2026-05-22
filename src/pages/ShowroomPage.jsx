@@ -22,7 +22,7 @@ export default function ShowroomPage() {
   return (
     <>
       <Helmet>
-        <title>Шоурум — Pufflux</title>
+        <title>Шоурум — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

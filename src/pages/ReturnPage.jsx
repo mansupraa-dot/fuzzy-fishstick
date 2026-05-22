@@ -17,7 +17,7 @@ export default function ReturnPage() {
   return (
     <>
       <Helmet>
-        <title>Возврат и обмен — Pufflux</title>
+        <title>Возврат и обмен — Archittell</title>
         <meta
           name="description"
           content="Условия возврата и обмена товаров. 14 дней по закону. Крупногабарит — индивидуально."

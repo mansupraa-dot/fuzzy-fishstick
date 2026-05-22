@@ -1,0 +1,56 @@
+<h2>Plan 4 — что входит в scope?</h2>
+<p class="subtitle">Определим, делаем одним планом или разбиваем на части</p>
+
+<div class="section">
+  <p class="label">Уже существуют, но используют старые токены (нужен Light Glass ребилд)</p>
+  <div class="options" data-multiselect>
+    <div class="option" data-choice="services" onclick="toggleSelect(this)">
+      <div class="letter">1</div>
+      <div class="content">
+        <h3>ServicesPage — ребилд</h3>
+        <p>Страница «Услуги» уже есть, контент хороший, только стиль старый (bg-graphite, bg-cream). Нужен Light Glass ребилд + CTA на /brief вместо /contact.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="process" onclick="toggleSelect(this)">
+      <div class="letter">2</div>
+      <div class="content">
+        <h3>ProcessPage — ребилд</h3>
+        <p>Страница «Как работаем» уже есть, 3 шага + FAQ хорошие. Только стиль старый. Нужен Light Glass ребилд.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="portfolio" onclick="toggleSelect(this)">
+      <div class="letter">3</div>
+      <div class="content">
+        <h3>PortfolioPage — ребилд + атрибуция</h3>
+        <p>Страница «Портфолио» уже есть, но старый стиль + нет атрибуции статуса (Реализован / В реализации / Концепт). Нужен ребилд + статусные бейджи.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:32px;">
+  <p class="label">Не существуют — нужно создать с нуля</p>
+  <div class="options" data-multiselect>
+    <div class="option" data-choice="brief" onclick="toggleSelect(this)">
+      <div class="letter">4</div>
+      <div class="content">
+        <h3>BriefPage — форма дизайн-лида</h3>
+        <p>Страница /brief — пользователь рассказывает о своём проекте, оставляет контакт. Главная форма лидогенерации.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="showroom" onclick="toggleSelect(this)">
+      <div class="letter">5</div>
+      <div class="content">
+        <h3>ShowroomPage — шоурум + запись</h3>
+        <p>Страница /showroom — описание шоурума, адрес, часы, образцы материалов. Форма записи на визит.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="philosophy" onclick="toggleSelect(this)">
+      <div class="letter">6</div>
+      <div class="content">
+        <h3>PhilosophyPage — о нас / философия</h3>
+        <p>Страница /philosophy — история основательницы, подход, ценности. Контентная, без форм.</p>
+      </div>
+    </div>
+  </div>
+</div>

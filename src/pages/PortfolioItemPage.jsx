@@ -35,7 +35,7 @@ export default function PortfolioItemPage() {
   return (
     <>
       <Helmet>
-        <title>{project.title} — Pufflux</title>
+        <title>{project.title} — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

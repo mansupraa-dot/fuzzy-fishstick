@@ -62,7 +62,7 @@ export default function BlogPage() {
   return (
     <>
       <Helmet>
-        <title>Блог — Pufflux | Об интерьере, мебели и свете</title>
+        <title>Блог — Archittell | Об интерьере, мебели и свете</title>
         <meta
           name="description"
           content="Статьи об архитектурном подборе мебели, освещения и сантехники. Практические советы для квартир в Санкт-Петербурге."

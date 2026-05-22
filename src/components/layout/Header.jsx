@@ -35,10 +35,10 @@ export default function Header() {
         {/* Logo */}
         <Link
           to="/"
-          aria-label="Brand"
+          aria-label="Archittell"
           className="text-[15px] font-normal tracking-[0.2em] uppercase text-ink"
         >
-          Brand
+          Archittell
         </Link>
 
         {/* Desktop nav */}

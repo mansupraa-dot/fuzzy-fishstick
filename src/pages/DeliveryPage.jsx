@@ -21,7 +21,7 @@ export default function DeliveryPage() {
   return (
     <>
       <Helmet>
-        <title>Доставка и сборка — Pufflux</title>
+        <title>Доставка и сборка — Archittell</title>
         <meta
           name="description"
           content="Доставка мебели, освещения и сантехники курьером по СПб. Профессиональная сборка — отдельная услуга."

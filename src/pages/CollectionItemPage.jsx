@@ -40,7 +40,7 @@ export default function CollectionItemPage() {
   return (
     <>
       <Helmet>
-        <title>{collection.title} — Pufflux</title>
+        <title>{collection.title} — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

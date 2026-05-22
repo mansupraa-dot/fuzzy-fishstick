@@ -18,7 +18,7 @@ export default function CatalogRootPage() {
   return (
     <>
       <Helmet>
-        <title>Каталог — Pufflux</title>
+        <title>Каталог — Archittell</title>
         <meta name="description" content="Мебель, освещение и сантехника от лучших брендов." />
       </Helmet>
       <div className="pt-16 min-h-screen">

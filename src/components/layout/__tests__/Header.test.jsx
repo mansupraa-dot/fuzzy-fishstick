@@ -17,7 +17,7 @@ const wrap = (ui) =>
 describe('Header', () => {
   it('renders logo link', () => {
     wrap(<Header />)
-    expect(screen.getByRole('link', { name: /brand/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /archittell/i })).toBeInTheDocument()
   })
 
   it('renders Каталог nav link', () => {

@@ -56,7 +56,7 @@ export default function CheckoutPage() {
   return (
     <>
       <Helmet>
-        <title>Оформление заказа — Pufflux</title>
+        <title>Оформление заказа — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

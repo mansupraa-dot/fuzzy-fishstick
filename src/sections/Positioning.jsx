@@ -7,7 +7,7 @@ export default function Positioning() {
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           <Reveal>
             <div>
-              <p className="text-xs uppercase tracking-widest text-accent mb-6">Кто такой Pufflux</p>
+              <p className="text-xs uppercase tracking-widest text-accent mb-6">Кто такой Archittell</p>
               <h2 className="text-3xl md:text-4xl font-light text-graphite leading-tight mb-8">
                 Не магазин.
                 <br />
@@ -21,7 +21,7 @@ export default function Positioning() {
                   магазинах, в разное время. В итоге предметы есть — пространства нет.
                 </p>
                 <p>
-                  Pufflux работает иначе. Из тысяч позиций — то, что работает в вашем конкретном
+                  Archittell работает иначе. Из тысяч позиций — то, что работает в вашем конкретном
                   помещении. Под пропорции, свет и вас.
                 </p>
                 <p>

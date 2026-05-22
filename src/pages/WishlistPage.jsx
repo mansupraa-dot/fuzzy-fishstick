@@ -11,7 +11,7 @@ export default function WishlistPage() {
   return (
     <>
       <Helmet>
-        <title>Избранное — Pufflux</title>
+        <title>Избранное — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

@@ -57,7 +57,7 @@ export default function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Услуги — Pufflux</title>
+        <title>Услуги — Archittell</title>
         <meta
           name="description"
           content="Подбор мебели, освещения и сантехники в Санкт-Петербурге. Архитектурный подход — единая спецификация для вашей квартиры."

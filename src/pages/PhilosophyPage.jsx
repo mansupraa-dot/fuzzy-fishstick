@@ -21,7 +21,7 @@ export default function PhilosophyPage() {
   return (
     <>
       <Helmet>
-        <title>О проекте — Pufflux</title>
+        <title>О проекте — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

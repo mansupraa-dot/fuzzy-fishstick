@@ -67,7 +67,7 @@ export default function ProcessPage() {
   return (
     <>
       <Helmet>
-        <title>Как работаем — Pufflux</title>
+        <title>Как работаем — Archittell</title>
         <meta
           name="description"
           content="Три шага архитектурного подбора мебели и интерьера в СПб: разговор, подбор, результат. Без наценок и навязанного стиля."

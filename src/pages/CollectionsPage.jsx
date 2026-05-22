@@ -7,7 +7,7 @@ export default function CollectionsPage() {
   return (
     <>
       <Helmet>
-        <title>Коллекции — Pufflux</title>
+        <title>Коллекции — Archittell</title>
         <meta
           name="description"
           content="Кураторские подборки мебели, освещения и сантехники — единые стили для вашего интерьера."

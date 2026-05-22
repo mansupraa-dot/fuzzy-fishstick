@@ -107,7 +107,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-          <span className="text-[11px] text-ink-4">© 2026 Brand. Все права защищены.</span>
+          <span className="text-[11px] text-ink-4">© 2026 Archittell. Все права защищены.</span>
           <div className="flex items-center gap-5">
             <a href="https://t.me/" className="text-[11px] text-ink-4 hover:text-ink transition-colors">
               Telegram

@@ -28,7 +28,7 @@ export default function CartPage() {
   return (
     <>
       <Helmet>
-        <title>Корзина — Pufflux</title>
+        <title>Корзина — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

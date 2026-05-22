@@ -22,7 +22,7 @@ export default function BriefPage() {
   return (
     <>
       <Helmet>
-        <title>Рассказать о проекте — Pufflux</title>
+        <title>Рассказать о проекте — Archittell</title>
       </Helmet>
 
       <div className="pt-20 min-h-screen">

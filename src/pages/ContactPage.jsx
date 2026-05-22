@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Контакт — Pufflux | Обсудить проект</title>
+        <title>Контакт — Archittell | Обсудить проект</title>
         <meta
           name="description"
           content="Обсудить подбор мебели, освещения или сантехники для квартиры в Санкт-Петербурге. Напишите — свяжемся в течение дня."
