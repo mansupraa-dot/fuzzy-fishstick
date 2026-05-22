@@ -10,23 +10,17 @@ const Wrapper = ({ children }) => (
 )
 
 describe('HomePage', () => {
-  it('renders without crash', () => {
+  it('renders heading «Коллекции»', () => {
     render(<HomePage />, { wrapper: Wrapper })
-    expect(screen.getByText('Каталог')).toBeInTheDocument()
+    expect(screen.getByText('Коллекции')).toBeInTheDocument()
   })
 
-  it('category links point to /catalog/furniture, /catalog/lighting, /catalog/plumbing', () => {
+  it('collection links point to /collections/:slug', () => {
     render(<HomePage />, { wrapper: Wrapper })
-    const links = screen.getAllByRole('link', { name: /мебель/i })
-    const furnitureLink = links.find((link) => link.getAttribute('href') === '/catalog/furniture')
-    expect(furnitureLink).toHaveAttribute('href', '/catalog/furniture')
-
-    const lightingLinks = screen.getAllByRole('link', { name: /освещение/i })
-    const lightingLink = lightingLinks.find((link) => link.getAttribute('href') === '/catalog/lighting')
-    expect(lightingLink).toHaveAttribute('href', '/catalog/lighting')
-
-    const plumbingLinks = screen.getAllByRole('link', { name: /сантехника/i })
-    const plumbingLink = plumbingLinks.find((link) => link.getAttribute('href') === '/catalog/plumbing')
-    expect(plumbingLink).toHaveAttribute('href', '/catalog/plumbing')
+    const links = screen.getAllByRole('link')
+    const hrefs = links.map((l) => l.getAttribute('href'))
+    expect(hrefs).toContain('/collections/skandinavsky')
+    expect(hrefs).toContain('/collections/minimalizm')
+    expect(hrefs).toContain('/collections/japandi')
   })
 })
