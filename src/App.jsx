@@ -17,6 +17,10 @@ import ContactPage from './pages/ContactPage'
 import PhilosophyPage from './pages/PhilosophyPage'
 import BriefPage from './pages/BriefPage'
 import ShowroomPage from './pages/ShowroomPage'
+import CollectionsPage from './pages/CollectionsPage'
+import CollectionItemPage from './pages/CollectionItemPage'
+import DeliveryPage from './pages/DeliveryPage'
+import ReturnPage from './pages/ReturnPage'
 
 // Placeholder pages — will be fleshed out in later plans
 function PlaceholderPage({ title }) {
@@ -45,16 +49,16 @@ export default function App() {
           <Route path="/portfolio/:slug" element={<PortfolioItemPage />} />
           <Route path="/process" element={<ProcessPage />} />
           <Route path="/philosophy" element={<PhilosophyPage />} />
-          <Route path="/collections" element={<PlaceholderPage title="Коллекции" />} />
-          <Route path="/collections/:slug" element={<PlaceholderPage title="Коллекция" />} />
+          <Route path="/collections" element={<CollectionsPage />} />
+          <Route path="/collections/:slug" element={<CollectionItemPage />} />
           <Route path="/showroom" element={<ShowroomPage />} />
           <Route path="/brief" element={<BriefPage />} />
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/search" element={<PlaceholderPage title="Поиск" />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/delivery" element={<PlaceholderPage title="Доставка" />} />
-          <Route path="/return" element={<PlaceholderPage title="Возврат" />} />
+          <Route path="/delivery" element={<DeliveryPage />} />
+          <Route path="/return" element={<ReturnPage />} />
           <Route path="*" element={<PlaceholderPage title="Страница не найдена" />} />
         </Routes>
       </main>
