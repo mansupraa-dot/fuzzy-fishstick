@@ -3,32 +3,9 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { Heart } from 'lucide-react'
 import { getProductById, CATEGORY_LABELS } from '../data/products'
+import { COLOR_MAP } from '../data/colors'
 import { useCart } from '../context/CartContext'
 import Button from '../components/ui/Button'
-
-const COLOR_MAP = {
-  'Серый': '#9CA3AF',
-  'Бежевый': '#D4B896',
-  'Графит': '#374151',
-  'Синий': '#3B82F6',
-  'Белый': '#F9FAFB',
-  'Дуб': '#B5844C',
-  'Антрацит': '#1F2937',
-  'Кремовый': '#FFF8F0',
-  'Терракот': '#C2775B',
-  'Оливковый': '#6B7C4B',
-  'Чёрный': '#111111',
-  'Латунь': '#B08D57',
-  'Хром': '#C0C0C0',
-  'Матовый чёрный': '#2A2A2A',
-  'Матовый белый': '#F0F0F0',
-  'Чёрный матовый': '#1A1A1A',
-  'Белый глянец': '#FFFFFF',
-  'Белый матовый': '#F5F5F5',
-  'Дуб натуральный': '#C49A6C',
-  'Дуб тёмный': '#7B5533',
-  'Серебристый': '#D1D5DB',
-}
 
 function formatPrice(n) {
   return n.toLocaleString('ru-RU') + ' ₽'
